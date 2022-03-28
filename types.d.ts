@@ -1,15 +1,15 @@
-interface Publisher<T> {
+export interface Publisher<T> {
   subscribe<S extends T>(s: Subscriber<S>): void;
 }
 
-interface Subscriber<T> {
+export interface Subscriber<T> {
   onSubscribe(s: Subscription): void;
   onNext(t: T): void;
   onError(e: Error): void;
   onComplete(): void;
 }
 
-interface Subscription {
+export interface Subscription {
   request(n: number): void;
   cancel(): void;
 }
